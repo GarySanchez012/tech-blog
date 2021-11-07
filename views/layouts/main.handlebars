@@ -1,0 +1,46 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just Tech News</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-yellow-200">
+    <div class="wrapper">
+      <header
+        class="justify-start flex flex-col p-2 bg-pink-300 bg-contain pl-6"
+      >
+        <nav class="text-2xl">
+          <a href="/">Home</a>
+          <a class="pl-2" href="/dashboard">dashboard</a>
+          {{#if loggedIn}}
+            <button id="logout" class="btn-no-style pl-2">logout</button>
+          {{else}}
+            <a class="p-2" href="/login">login</a>
+          {{/if}}
+        </nav>
+        <h1 class="mt-4 border-2 rounded-md w-48 p-2 text-center bg-yellow-200">
+          <a class="text-4xl" href="/">Tech Blog</a>
+        </h1>
+      </header>
+      <main>
+        {{{body}}}
+      </main>
+      <footer>
+        Thanks for visiting!
+      </footer>
+    </div>
+
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
+  </body>
+
+</html>
